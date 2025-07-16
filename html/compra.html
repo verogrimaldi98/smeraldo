@@ -26,11 +26,13 @@
                     </a>
                 </div>
                 <div class="d-flex">
-                    <a href="../html/login.html" class="me-3"><i class="fa-solid fa-user fa-lg" style="color: #ffffff;"></i></a>
-                    <a href="#" id="icono-carrito" class="carrito-icono me-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                    <a href="../html/login.html" class="me-3"><i class="fa-solid fa-user fa-lg"
+                            style="color: #ffffff;"></i></a>
+                    <!-- <a href="#" id="icono-carrito" class="carrito-icono me-3" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                         <i class="fa-solid fa-bag-shopping fa-lg" style="color: #ffffff;"></i>
                         <span id="contador-carrito" class="contador-carrito">0</span>
-                    </a>
+                    </a> -->
                 </div>
             </div>
 
@@ -46,31 +48,55 @@
         </div>
     </nav>
 
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title fw-bold" id="offcanvasRightLabel">Tu carrito</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <div id="lista-carrito"></div>
-            <div class="offcanvas-bottom">
-                <div id="total-carrito">Total: $0.00</div>
-                <div class="botones-carrito">
-                    <button id="vaciar-carrito">Vaciar Carrito</button>
-                    <button id="pagar">Pagar</button>
+    <main class="container-md d-flex justify-content-center">
+        <div class="purchase-container my-4">
+            <div class="resume-section">
+                <div>
+                    <h3 class="border-b fw-bold">Resúmen de compra</h3>
+                </div>
+                <section class="compra">
+                    <div id="detalle">
+                    </div>
+                </section>
+            </div>
+            <div class="purchase-form">
+                <div class="border-t pt-2 mt-2">
+                    <div>
+                        <h4>Datos de contacto</h4>
+                    </div>
+                    <form id="formulario" action="https://formspree.io/f/movdqyav" method="POST">
+                        <div>
+                            <textarea id="carritoData" name="carrito" style="display:none;"></textarea>
+                            <textarea id="totalCarrito" name="total" style="display:none;"></textarea>
+                        </div>
+                        <div class="purchase-section">
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre:</label>
+                                <input type="text" id="nombre" name="nombre" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="apellido" class="form-label">Apellido:</label>
+                                <input type="text" id="apellido" name="apellido" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="purchase-section">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Correo electrónico:</label>
+                                <input type="email" id="email" name="email" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="telefono" class="form-label">Teléfono:</label>
+                                <input type="tel" id="telefono" name="telefono" class="form-control">
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button -type="submit" id="botonEnviar" class="form-btn">Confirmar Compra</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-    </div>
 
-    <main class="container-sm d-flex justify-content-center">
-        <div class="my-4">
-            <div>
-                <h3 class="text-center">Catálogo de productos</h3>
-            </div>
-            <div id="product-container">
-            </div>
-        </div>
     </main>
 
     <footer class="footer">
@@ -106,7 +132,8 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/script.js"></script>
+    <script src="../js/compra.js"></script>
+
 </body>
 
 </html>

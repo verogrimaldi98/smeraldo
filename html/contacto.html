@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <title>Contacto</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-sm sticky-top" data-bs-theme="dark">
         <div class="container-fluid flex-column px-0">
 
             <div class="w-100 d-flex justify-content-between align-items-center navbar-content">
@@ -25,22 +26,42 @@
                     </a>
                 </div>
                 <div class="d-flex">
-                    <a href="#" class="me-3"><img src="../images/user-solid.svg" alt="profile-icon" width="20"></a>
-                    <a href="#"><img src="../images/bag-shopping-solid.svg" alt="cart-icon" width="20"></a>
+                    <a href="../html/login.html" class="me-3"><i class="fa-solid fa-user fa-lg" style="color: #ffffff;"></i></a>
+                    <a href="#" id="icono-carrito" class="carrito-icono me-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                        <i class="fa-solid fa-bag-shopping fa-lg" style="color: #ffffff;"></i>
+                        <span id="contador-carrito" class="contador-carrito">0</span>
+                    </a>
                 </div>
             </div>
 
-            <div class="collapse navbar-collapse w-100 d-sm-flex border-nav" id="navbarMenu">
+            <div class="collapse navbar-collapse w-100 d-sm-flex border-t" id="navbarMenu">
                 <ul class="navbar-nav flex-sm-row flex-column justify-content-center gap-3 py-2 w-100 text-center">
                     <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="../html/productos.html">Productos</a></li>
                     <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Preguntas frecuentes</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="#">Preguntas frecuentes</a></li> -->
                 </ul>
             </div>
 
         </div>
     </nav>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title fw-bold" id="offcanvasRightLabel">Tu carrito</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div id="lista-carrito"></div>
+            <div class="offcanvas-bottom">
+                <div id="total-carrito">Total: $0.00</div>
+                <div class="botones-carrito">
+                    <button id="vaciar-carrito">Vaciar Carrito</button>
+                    <button id="pagar">Pagar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <main class="container-md d-flex justify-content-center">
         <div class="contact-container my-4">
@@ -56,15 +77,15 @@
                     <div class="contact-section">
                         <div>
                             <div class="section-item">
-                                <div><img src="../images/whatsapp-brands-bl.svg" alt="" height="24px"></div>
+                                <div><i class="fa-brands fa-whatsapp fa-lg" style="color: #7838c7;"></i></div>
                                 <div>54 - 1145896545</div>
                             </div>
                             <div class="section-item">
-                                <div><img src="../images/envelope-solid-bl.svg" alt="" height="24px"></div>
+                                <div><i class="fa-solid fa-envelope fa-lg" style="color: #7838c7;"></i></div>
                                 <div>correorandom@gmail.com</div>
                             </div>
                             <div class="section-item">
-                                <div><img src="../images/location-dot-solid-bl.svg" alt="" height="24px"></div>
+                                <div><i class="fa-solid fa-location-dot fa-lg" style="color: #7838c7;"></i></div>
                                 <div>Calle Falsa 123, CABA.</div>
                             </div>
                         </div>
@@ -81,16 +102,16 @@
                                 <div class="form-section">
                                     <div class="mb-3 contact-section">
                                         <label for="user-name" class="form-label">Nombre completo:</label>
-                                        <input type="text" id="user-name" name="user-name" class="form-control">
+                                        <input type="text" id="user-name" name="user-name" class="form-control" required>
                                     </div>
                                     <div class="mb-3 contact-section">
                                         <label for="user-email" class="form-label">Correo electrónico:</label>
-                                        <input type="email" id="user-email" name="user-email" class="form-control">
+                                        <input type="email" id="user-email" name="user-email" class="form-control" required>
                                     </div>
                                 </div>
                                 <div class="mb-3">
                                     <label for="comment" class="form-label">Tu mensaje:</label>
-                                    <textarea name="comment" id="comment" rows="5" class="form-control"></textarea>
+                                    <textarea name="comment" id="comment" rows="5" class="form-control" required></textarea>
                                 </div>
                                 <div class="d-flex justify-content-center">
                                     <input type="submit" value="Enviar" class="form-btn">
@@ -110,33 +131,33 @@
             </div>
             <div class="contact-box">
                 <div class="section-item">
-                    <div><img src="../images/whatsapp-brands.svg" alt="" height="24px"></div>
+                    <div><i class="fa-brands fa-whatsapp fa-lg" style="color: #ffffff;"></i></div>
                     <div>54 - 1145896545</div>
                 </div>
                 <div class="section-item">
-                    <div><img src="../images/envelope-solid.svg" alt="" height="24px"></div>
+                    <div><i class="fa-solid fa-envelope fa-lg" style="color: #ffffff;"></i></div>
                     <div>correorandom@gmail.com</div>
                 </div>
                 <div class="section-item">
-                    <div><img src="../images/location-dot-solid.svg" alt="" height="24px"></div>
+                    <div><i class="fa-solid fa-location-dot fa-lg" style="color: #ffffff;"></i></div>
                     <div>Calle Falsa 123, CABA.</div>
                 </div>
             </div>
-            <div class="d-flex justify-content-between align-items-center border-nav py-3">
+            <div class="d-flex justify-content-between align-items-center border-t py-3">
                 <div>
                     <div>Desarrollado por Patricia Verónica Grimaldi</div>
                 </div>
                 <div class="section-item">
-                    <div><a href="#"><img src="../images/instagram-brands.svg" alt="" height="24px"></a></div>
-                    <div><a href="#"><img src="../images/github-brands.svg" alt="" height="24px"></a></div>
-                    <div><a href="#"><img src="../images/linkedin-brands.svg" alt="" height="24px"></a></div>
+                    <div><a href="#"><i class="fa-brands fa-instagram fa-lg" style="color: #ffffff;"></i></a></div>
+                    <div><a href="#"><i class="fa-brands fa-github fa-lg" style="color: #ffffff;"></i></a></div>
+                    <div><a href="#"><i class="fa-brands fa-linkedin fa-lg" style="color: #ffffff;"></i></a></div>
                 </div>
             </div>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
+    <script src="../js/script.js"></script>
 </body>
 
 </html>
